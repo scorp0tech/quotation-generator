@@ -1,0 +1,110 @@
+/* PDF-specific styles */
+@media print {
+  .page-break-before {
+    page-break-before: always;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .pdf-container {
+    padding: 40px;
+  }
+  
+  /* Hide UI elements when printing */
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Watermark print settings */
+  img[alt="Watermark"] {
+    width: 80% !important;
+    max-width: none !important;
+    opacity: 0.15 !important;
+    z-index: 5 !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  
+  /* Center the watermark in each page */
+  @page {
+    size: auto;
+    margin: 0mm;
+  }
+  
+  /* Thank you message positioning */
+  .thank-you-message {
+    position: absolute !important;
+    bottom: 40px !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    z-index: 10 !important;
+    break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    background-color: white !important;
+  }
+  
+  /* Page styling for print */
+  .preview-page {
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    position: relative !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+  }
+  
+  /* Hide page number indicators when printing */
+  .page-number {
+    display: none !important;
+  }
+  
+  /* Ensure content fits on one page */
+  .page-content {
+    max-height: calc(100vh - 120px) !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Watermark styling for both screen and print */
+.watermark-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Each page watermark */
+.page-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  z-index: -1;
+  width: 60%;
+  max-width: 500px;
+  pointer-events: none;
+}
