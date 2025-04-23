@@ -21,7 +21,7 @@ const DeliverableTable: React.FC<DeliverableTableProps> = ({
       <h3 className="font-bold mb-2">Deliverables</h3>
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-black text-white">
             <th className="border border-gray-200 py-2 px-3 text-left">Item</th>
             <th className="border border-gray-200 py-2 px-3 text-center">Rate</th>
             <th className="border border-gray-200 py-2 px-3 text-center">Quantity</th>
